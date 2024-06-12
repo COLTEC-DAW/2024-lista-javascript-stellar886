@@ -1,5 +1,3 @@
-
-
 var num = prompt("quantas #?");
 
 for(let i = 2; i < num; i++){
