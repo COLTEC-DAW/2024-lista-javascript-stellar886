@@ -18,3 +18,7 @@ function max(a, b){
     }
 }
 
+console.log(min(valor1, valor2));
+
+console.log(max(valor1, valor2));
+
