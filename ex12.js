@@ -1,14 +1,16 @@
-function toList(array) {
+function toList(...values) {
     let list = null;
-    for (let i = array.length - 1; i >= 0; i--) {
-        list = { value: array[i], rest: list };
+    for (let i = values.length - 1; i >= 0; i--) {
+        list = { value: values[i], rest: list };
     }
     return list;
 }
 
+// Solicitar ao usuário que insira os valores separados por vírgulas
+var userInput = prompt("Digite os elementos da lista separados por vírgulas: ");
 
-var valores = prompt("Digite os elementos do array separados por vírgulas: ");
-var array = valores.split(",").map(Number);  // Converte a string de entrada em um array de números
+// Converte a string de entrada em uma lista encadeada
+var list = toList(...userInput.split(","));
 
-var list = toList(array);
-console.log(JSON.stringify(list, null, 2));  // Exibe a lista encadeada formatada no console
+// Exibe a lista encadeada formatada no console
+console.log(JSON.stringify(list, null, 2));
